@@ -1,9 +1,10 @@
 {
     "name": "TopShot King Assist",
-    "description": Tool to help you snipe moments",
+    "description": "Tool to help you snipe moments!",
     "version": "1.0",
-    "manifest_version": 3
+    "manifest_version": 3,
     "background": {
       "service_worker": "background.js"
-    }
+    },
+    "permissions": ["storage"]
   }
