@@ -3,10 +3,19 @@
     "description": "Tool to help you snipe moments!",
     "version": "1.0",
     "manifest_version": 3,
+    "author": "@topshot_king",
     "background": {
-      "service_worker": "background.js"
+      "service_worker": "payload.js"
     },
-    "permissions": ["storage", "activeTab", "scripting"],
+    "permissions": [
+      "storage", 
+      "activeTab",
+      "scripting",
+      "contextMenus"
+    ],
+    "host_permissions": [
+      "https://www.nbatopshot.com/"
+    ],
     "action": {
       "default_popup": "index.html",
       "default_icon": {
@@ -21,6 +30,5 @@
       "32": "/images/get_started32.png",
       "48": "/images/get_started48.png",
       "128": "/images/get_started128.png"
-    },
-    "options_page": "options.html"
+    }
   }
