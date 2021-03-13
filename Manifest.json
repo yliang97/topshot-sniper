@@ -5,16 +5,18 @@
     "manifest_version": 3,
     "author": "@topshot_king",
     "background": {
-      "service_worker": "payload.js"
+      "service_worker": "background.js"
     },
     "permissions": [
       "storage", 
       "activeTab",
-      "scripting",
-      "contextMenus"
+      "scripting"
     ],
-    "host_permissions": [
-      "https://www.nbatopshot.com/"
+    "content_scripts": [
+      {
+      "matches": ["<all_urls>"],
+      "js": ["payload.js"]
+      }
     ],
     "action": {
       "default_popup": "index.html",

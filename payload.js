@@ -1,13 +1,10 @@
-// initialize listener
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.contextMenus.create({
-      "id": "MomentPrices",
-      "title": "Moment Prices",
-      "contexts": ["prices"]
-    });
-  });
+console.log("here1");
+let sniper = document.getElementById("Sniper");
 
-// send the page title as a chrome message
-chrome.runtime.sendMessage(document.title, function(response) {
-    console.log(document.title);
+sniper.addEventListener("click", async () => {
+    let [tab] = await chrome.tabs.query({active: true, currentWindow: true });
+    // send the page title as a chrome message
+    chrome.runtime.sendMessage(tab.title, function(response) {
+        console.log(tab.title);
+    });
 });
