@@ -1,19 +1,52 @@
-window.addEventListener ("load", myMain, false);
+var globalStatus;
 
+// initialize globalStatus
+chrome.storage.sync.get(['value'], function (status) {
+    globalStatus = status.value;
+    console.log('Initialized status: ' + globalStatus);
+}); 
+
+// initial load if globalStatus = true
+window.addEventListener ("load", function() {
+    if (globalStatus) {
+        myMain();
+    }
+});
+
+// get current URL
 var currentURL = location.href;
 
 window.onclick=function(){
-  if(currentURL!=location.href){
-    console.log("tracked change");
-    if (document.getElementById("moment-detailed-serialNumber") != null) {
-        myMain();
-    }
-    currentURL = location.href
-  }
+    // refresh Status
+    // chrome.storage.sync.get(['value'], function (status) {
+    //     console.log('Toggle is currently ' + status.value);
+    //     globalStatus = status.value;
+    // });
+    urlReset();
+}
+
+// function getStatus (_callback) {
+//     chrome.storage.sync.get(['value'], function (status) {
+//         console.log('Toggle is currently ' + status.value);
+//         globalStatus = status.value;
+//     });
+//     _callback();
+// }
+
+function urlReset () {
+    if(currentURL!=location.href){
+        console.log("Clicked new link");
+        console.log("Status is: " + globalStatus);
+        if (document.getElementById("moment-detailed-serialNumber") != null && globalStatus) {
+            console.log("here -- running main");
+            myMain();
+        }
+        currentURL = location.href;
+      }
 }
 
 function myMain () {
-    console.log("initializing");
+    console.log("Initializing");
 
     // Grab New Listing Array with struct Listing
     var scrapedListings = GetListings("moment-detailed-serialNumber");

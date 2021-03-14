@@ -1,6 +1,6 @@
 {
-    "name": "TopShot King Assist",
-    "description": "Tool to help you snipe moments!",
+    "name": "TopShot Listing Tool",
+    "description": "Sort by payments in Topshot",
     "version": "1.0",
     "manifest_version": 3,
     "author": "@topshot_king",
@@ -16,22 +16,22 @@
       {
       "run_at": "document_end",
       "matches": ["https://www.nbatopshot.com/*"],
-      "js": ["payload.js"]
+      "js": ["js/payload.js"]
       }
     ],
     "action": {
       "default_popup": "index.html",
       "default_icon": {
-        "16": "/images/get_started16.png",
-        "32": "/images/get_started32.png",
-        "48": "/images/get_started48.png",
-        "128": "/images/get_started128.png"
+        "16": "/images/topshotking16.png",
+        "32": "/images/topshotking32.png",
+        "48": "/images/topshotking48.png",
+        "128": "/images/topshotking128.png"
       }
     },
     "icons": {
-      "16": "/images/get_started16.png",
-      "32": "/images/get_started32.png",
-      "48": "/images/get_started48.png",
-      "128": "/images/get_started128.png"
+      "16": "/images/topshotking16.png",
+      "32": "/images/topshotking32.png",
+      "48": "/images/topshotking48.png",
+      "128": "/images/topshotking128.png"
     }
   }
