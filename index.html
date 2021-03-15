@@ -1,34 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- load javascript: Bootstrap v4- http://twitter.github.com/bootstrap/ -->
-        <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-        
-
-        <!-- load stylesheets: Bootstrap v4 - http://twitter.github.com/bootstrap/index.html -->
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
-
         <!-- load stylesheets: internal -->
         <link rel="stylesheet" type="text/css" href="/css/button.css"></link>
     </head>
     <body>
-      <div class="container" id="mainPopup">
-        <ul class="card-body" style="width: 18rem;">
-          <h5 class="card-title">TopShot Assist: Sort by Price</h5>
-          <p class="card-text">Toggle the button to sort by price rather than listing number (you will have to refresh the page).</p>
-          <label class="switch">
-            <input type="checkbox" id="toggle" value="False">
-            <span class="slider round"></span>
-          </label>
-        </ul>
+
+      <label class="switch">
+        <input type="checkbox" id="toggle" value="False">
+        <span class="slider round"></span>
+      </label>
+
+      <!-- load javascript: unique html page javascript file -->
+      <script type="text/javascript" src="js/toggle.js"></script>
         
-        <!-- Toggle -->
-
-      </div>
-
-
-        <!-- load javascript: unique html page javascript file -->
-        <script type="text/javascript" src="js/toggle.js"></script>
     </body>
 </html>

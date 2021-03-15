@@ -18,10 +18,10 @@ var currentURL = location.href;
 
 window.onclick=function(){
     // refresh Status
-    // chrome.storage.sync.get(['value'], function (status) {
-    //     console.log('Toggle is currently ' + status.value);
-    //     globalStatus = status.value;
-    // });
+    chrome.storage.sync.get(['value'], function (status) {
+        console.log('Toggle is currently ' + status.value);
+        globalStatus = status.value;
+    });
     urlReset();
 }
 
