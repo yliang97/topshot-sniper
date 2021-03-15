@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="width:300px; height: 150px;" lang="en">
     <head>
-        <!-- load stylesheets: internal -->
-        <link rel="stylesheet" type="text/css" href="/css/button.css"></link>
-    </head>
-    <body style="width: 300px">
-      <div class="center"> 
-        Toggle switch on to sort by price
-      </div> 
-      <label class= "switch">
-        <input type="checkbox" id="toggle" value="False"/> 
-        <span class="slider round"></span>
-      </label>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="/css/bootstrap.css">
+      <link rel="stylesheet" href="/css/coreui.css">
+      <title>Topshot Assist Tool</title>
+    </head> 
+    <body style="width:300px; height: 150px">
+      <div class="container-fluid">
+        <div class="page-header">   
+          <h2>Topshot Assist</h2>
+          <p>Made by @Topshot_King</p>
+        </div>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="toggle">
+          <label class="custom-control-label" for="toggle"> <b>Toggle to sort by lowest ask</b></label>
+        </div>
+        
+        <div class="page-header">   
+          <p>You may have to refresh the page to see updated results</p>
+        </div>
+      </div>
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+      <script type="text/javascript" src="js/popper.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      
       <!-- load javascript: unique html page javascript file -->
       <script type="text/javascript" src="js/toggle.js"></script>
         

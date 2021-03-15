@@ -16,6 +16,7 @@ window.addEventListener ("load", function() {
 // get current URL
 var currentURL = location.href;
 
+// refresh upon new URL
 window.onclick=function(){
     // refresh Status
     chrome.storage.sync.get(['value'], function (status) {
