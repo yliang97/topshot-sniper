@@ -1,7 +1,11 @@
 chrome.runtime.onInstalled.addListener(() => {
   // restoreOptions();
   console.log("Initialized");
-
+  chrome.storage.sync.set({
+    'value' : false
+  }, function () {
+      console.log("Switch initialized as " + false);
+  });
 });
 
 // Check loaded or not

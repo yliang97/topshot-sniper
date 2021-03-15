@@ -1,8 +1,13 @@
 // load stored selections
+var globalStatus;
 
 document.addEventListener('DOMContentLoaded', function () {
     getOptions();
     console.log("DOM Loaded");
+    chrome.storage.sync.get(['value'], function (status) {
+        globalStatus = status.value;
+        console.log(status.value);
+    }); 
 });
 
 // only toggle on click
@@ -11,15 +16,20 @@ document.getElementById("toggle").addEventListener("click", function (){
     toggle("toggle");
 }); 
 
+// run this if functon off of chrome storage
+
 function toggle(id_name) {
-  if (document.getElementById(id_name).value == "False") {
-    document.getElementById(id_name).value = "True"
-    document.getElementById(id_name).checked = true;
-    toggleOn = true;
-  } else if (document.getElementById(id_name).value == "True") {
-    document.getElementById(id_name).value = "False";
-    document.getElementById(id_name).checked = false;
-    toggleOn = false;
+//   if (document.getElementById(id_name).value == "False") {
+//     document.getElementById(id_name).value = "True"
+//     document.getElementById(id_name).checked = true;
+//   } else if (document.getElementById(id_name).value == "True") {
+//     document.getElementById(id_name).value = "False";
+//     document.getElementById(id_name).checked = false;
+//   }
+  if (!globalStatus) {
+      document.getElementById(id_name).checked = true;
+  } else if (globalStatus) {
+      document.getElementById(id_name).checked = false;
   }
 
   // set stored selection post toggle
